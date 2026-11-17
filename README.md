@@ -13,6 +13,9 @@ npm start
 Use o Expo Go para abrir o aplicativo no celular ou execute `npm run android`
 ou `npm run ios` para iniciar no emulador correspondente.
 
+Para executar no navegador, use `npm run web` e abra o endereço exibido pelo
+Expo. No Codespaces, acesse a porta encaminhada pelo VS Code.
+
 ## Estrutura
 
 - `src/features/tasks/screens`: tela e gerenciamento do estado da tarefa.

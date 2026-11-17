@@ -2,7 +2,8 @@ import type { Task } from '../types/task';
 
 export type TaskAction =
   | { type: 'task/added'; task: Task }
-  | { type: 'task/toggled'; id: Task['id'] };
+  | { type: 'task/toggled'; id: Task['id'] }
+  | { type: 'tasks/loaded'; tasks: Task[] };
 
 export function taskReducer(tasks: Task[], action: TaskAction): Task[] {
   switch (action.type) {
@@ -14,5 +15,7 @@ export function taskReducer(tasks: Task[], action: TaskAction): Task[] {
           ? { ...task, completed: !task.completed }
           : task,
       );
+    case 'tasks/loaded':
+      return action.tasks;
   }
 }
